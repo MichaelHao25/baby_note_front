@@ -1,0 +1,25 @@
+{
+  "id": "67bc35f66f388d7e3b093bf3",
+  "createDate": "2025/02/24 17:03:50",
+  "lastModifiedDate": "2025/05/21 16:25:04",
+  "schoolCode": "RBI850",
+  "teachChart": {
+    "5-8": "5~8年",
+    "0-1": "0~1年",
+    "8-100": "8年以上",
+    "1-3": "1~3年",
+    "3-5": "3~5年"
+  },
+  "ageChart": {
+    "35-40": "35~40岁",
+    "28-35": "28~35岁",
+    "20-25": "20~25岁",
+    "40-100": "40岁以上",
+    "25-28": "25~28岁"
+  },
+  "genderRetireAge": [60, 55],
+  "retireCharAge": 5,
+  "showAgeChart": 0,
+  "showTeachChart": 0,
+  "showRetireCharAge": 0
+}

@@ -1,0 +1,17 @@
+.teacher-name .copy-btn,
+.teacher-name .clear-btn {
+    display: none;
+}
+
+.teacher-name:hover .copy-btn,
+.teacher-name:hover .clear-btn{
+    display: block;
+}
+
+.teacher-table .ant-table-tbody .ant-table-cell {
+    padding: 0 !important;
+}
+
+.teacher-table .table-item:hover {
+    border: 2px solid #409eff;
+}

@@ -1,0 +1,337 @@
+{
+  "participation": 56,
+  "criterionDatas": [
+    {
+      "criterionName": "德育与育德",
+      "size": 7,
+      "criterionId": "659c32eb4413762a879c3a57",
+      "submitTeacherCount": 7,
+      "record": [
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "五1班",
+              "teacherFileDocs": [],
+              "name": "事件发生地点",
+              "options": [],
+              "type": 5
+            },
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67c5a3f278fccf764774ff8b",
+                  "url": "https://dl.yxuer.com/f0a7606143514e18936380e3d876d670.pdf",
+                  "fileName": "班级计划.pdf",
+                  "mimeType": "application/pdf",
+                  "fileMineType": "pdf",
+                  "size": 0
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            }
+          ],
+          "criterion": "659c573d4413762a879c3ab0",
+          "teacherName": "马燕萍",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/05/17 23:57:27",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "德育与育德",
+          "criterionType": 0,
+          "dataTime": "2025/03/03 20:43:15",
+          "levelSum": "5",
+          "viewType": 0,
+          "name": "润德于心",
+          "id": "67c5a410c821541dc9815ac4",
+          "status": 20,
+          "desc": "2024学年第二学期班级计划",
+          "createDate": "2025/03/03 20:44:00"
+        },
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "学校",
+              "teacherFileDocs": [],
+              "name": "事件发生地点",
+              "options": [],
+              "type": 5
+            },
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67c5224378fccf764774db71",
+                  "url": "https://dl.yxuer.com/2f5ea7fa5c75431c9529cee8514402b7.pdf",
+                  "fileName": "2024学年度第二学期班级工作计划（一2）.pdf",
+                  "mimeType": "application/pdf",
+                  "fileMineType": "pdf",
+                  "size": 0
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            }
+          ],
+          "criterion": "659c573d4413762a879c3ab0",
+          "teacherName": "黄佳宁",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:59:33",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "德育与育德",
+          "criterionType": 0,
+          "dataTime": "2025/03/03 11:30:03",
+          "levelSum": "5",
+          "viewType": 0,
+          "name": "润德于心",
+          "id": "67c5227a67cf9818ba459129",
+          "status": 20,
+          "desc": "2024学年第二学期班级计划",
+          "createDate": "2025/03/03 11:31:06"
+        },
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "学校",
+              "teacherFileDocs": [],
+              "name": "事件发生地点",
+              "options": [],
+              "type": 5
+            },
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67c518c678fccf764774cb58",
+                  "url": "https://dl.yxuer.com/4b0b979b2c134066b649d4753a7ba12f.docx",
+                  "fileName": "一（3）班2024学年第二学期班级计划.docx",
+                  "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                  "fileMineType": "word",
+                  "size": 0
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            }
+          ],
+          "criterion": "659c573d4413762a879c3ab0",
+          "teacherName": "张敏燕",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:59:33",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "德育与育德",
+          "criterionType": 0,
+          "dataTime": "2025/03/03 10:49:03",
+          "levelSum": "5",
+          "viewType": 0,
+          "name": "润德于心",
+          "id": "67c518f967cf9818ba4590c1",
+          "status": 20,
+          "desc": "一3班2024学年第二学期班级计划",
+          "createDate": "2025/03/03 10:50:33"
+        }
+      ]
+    },
+    {
+      "criterionName": "教学与科研",
+      "size": 31,
+      "criterionId": "659c411e4413762a879c3a5d",
+      "submitTeacherCount": 29,
+      "record": [
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67c5a54678fccf764774fff4",
+                  "url": "https://dl.yxuer.com/c5bb246ce30b4eb0bd64e639b84139ec.pdf",
+                  "fileName": "2024学年年第二学期校本研修教师手册(马燕萍）.pdf",
+                  "mimeType": "application/pdf",
+                  "fileMineType": "pdf",
+                  "size": 0
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            }
+          ],
+          "criterion": "659c93c34413762a879c74ca",
+          "teacherName": "马燕萍",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:58:59",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "教学与科研",
+          "criterionType": 0,
+          "dataTime": "2025/03/03 20:48:55",
+          "levelSum": "1",
+          "viewType": 0,
+          "name": "专业研修",
+          "id": "67c5a559c821541dc9815aca",
+          "status": 20,
+          "desc": "2024学年年第二学期校本研修教师手册",
+          "createDate": "2025/03/03 20:49:29"
+        },
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67b7c220c31a9541c6ce36de",
+                  "url": "https://dl.yxuer.com/20d2f6370a964a3f9d6c1e6686f6fece.doc",
+                  "fileName": "2024学年年第一学期校本研修教师手册(薛峰).doc",
+                  "mimeType": "application/msword",
+                  "fileMineType": "word",
+                  "size": 118784
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            },
+            {
+              "answer": "",
+              "teacherFileDocs": [],
+              "name": "记录说明",
+              "options": [],
+              "type": 3
+            }
+          ],
+          "criterion": "659c93c34413762a879c74ca",
+          "teacherName": "薛峰",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:58:59",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "教学与科研",
+          "criterionType": 0,
+          "dataTime": "2025/02/21 00:00:00",
+          "levelSum": "1",
+          "viewType": 0,
+          "name": "专业研修",
+          "id": "67b7c2370a19896bb5f771f1",
+          "status": 20,
+          "desc": "2024学年第一学期校本研修",
+          "createDate": "2025/02/21 08:00:55"
+        },
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67b811cec31a9541c6ce443b",
+                  "url": "https://dl.yxuer.com/1b49ab18ba7840b98aa1e5c55b666283.doc",
+                  "fileName": "培训手册二上（姚文赟）.doc",
+                  "mimeType": "application/msword",
+                  "fileMineType": "word",
+                  "size": 150016
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            },
+            {
+              "answer": "",
+              "teacherFileDocs": [],
+              "name": "记录说明",
+              "options": [],
+              "type": 3
+            }
+          ],
+          "criterion": "659c93c34413762a879c74ca",
+          "teacherName": "姚文贇",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:58:59",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "教学与科研",
+          "criterionType": 0,
+          "dataTime": "2025/02/21 00:00:00",
+          "levelSum": "1",
+          "viewType": 0,
+          "name": "专业研修",
+          "id": "67b811d00a19896bb5f7738e",
+          "status": 20,
+          "desc": "校本研修",
+          "createDate": "2025/02/21 13:40:32"
+        }
+      ]
+    },
+    {
+      "criterionName": "团队与合作",
+      "size": 1,
+      "criterionId": "659c41244413762a879c3a60",
+      "submitTeacherCount": 1,
+      "record": [
+        {
+          "teacherAttrObjectList": [
+            {
+              "answer": "",
+              "teacherFileDocs": [
+                {
+                  "id": "67bbd7e767839f481c1dcd03",
+                  "url": "https://dl.yxuer.com/0f1a2e05d1204d8b996bb80533c26970.doc",
+                  "fileName": "2024学年年第二学期科技组教研计划.doc",
+                  "mimeType": "application/msword",
+                  "fileMineType": "word",
+                  "size": 0
+                }
+              ],
+              "name": "附件提交",
+              "options": [],
+              "type": 6
+            }
+          ],
+          "criterion": "659d70c5a1438740f01bd504",
+          "teacherName": "周雅君",
+          "repulses": {
+            "remark": "审核通过",
+            "backDate": "2025/03/10 14:58:53",
+            "userId": "659befdda5f838b3673796b6",
+            "status": 2
+          },
+          "parentName": "团队与合作",
+          "criterionType": 0,
+          "dataTime": "2025/02/24 10:21:37",
+          "levelSum": "1",
+          "viewType": 0,
+          "name": "文明班组创建",
+          "id": "67bbd7f7f20e3d6a3cbc925f",
+          "status": 20,
+          "desc": "二零二四学年第二学期科技组工作计划",
+          "createDate": "2025/02/24 10:22:47"
+        }
+      ]
+    },
+    {
+      "criterionName": "特色项目",
+      "size": 0,
+      "criterionId": "659c41294413762a879c3a63",
+      "submitTeacherCount": 0,
+      "record": []
+    }
+  ]
+}

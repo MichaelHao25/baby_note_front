@@ -1,0 +1,311 @@
+[
+  {
+    "submitCount": 0,
+    "finishCount": 0,
+    "recordCount": 0,
+    "name": "德育与育德",
+    "id": "659c419b10674979b464144b",
+    "childs": [
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c573d4413762a879c3ab0",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "润德于心",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c573d10674979b4641474",
+            "criterionClassId": "659c511910674979b4641460",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "润德于心",
+        "id": "659c511910674979b4641460",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c5d534413762a879c3abe",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "育人导行",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c5d5310674979b464147b",
+            "criterionClassId": "659c511910674979b4641461",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "育人导行",
+        "id": "659c511910674979b4641461",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c5faa4413762a879c3ad5",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "结对互助",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c5faa10674979b4641489",
+            "criterionClassId": "659c511910674979b4641463",
+            "type": 0
+          },
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c673c4413762a879c3ae9",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "志愿服务",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c673c10674979b464149f",
+            "criterionClassId": "659c511910674979b4641463",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "辐射引领",
+        "id": "659c511910674979b4641463",
+        "status": 20
+      }
+    ],
+    "status": 20
+  },
+  {
+    "submitCount": 0,
+    "finishCount": 0,
+    "recordCount": 0,
+    "name": "教学与科研",
+    "id": "659c41a410674979b464144d",
+    "childs": [
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c68574413762a879c3afd",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "实践教学",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c685710674979b46414a9",
+            "criterionClassId": "659c565010674979b4641466",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "实践教学",
+        "id": "659c565010674979b4641466",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c93c34413762a879c74ca",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "专业研修",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c93c310674979b46414ba",
+            "criterionClassId": "659c565010674979b4641467",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "专业研修",
+        "id": "659c565010674979b4641467",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d6a94a1438740f01bd382",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "学生获奖",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d6a94e0ebee713031f004",
+            "criterionClassId": "659c565010674979b464146b",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "学生获奖",
+        "id": "659c565010674979b464146b",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d6c2ca1438740f01bd3ac",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "课题立项",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d6c2ce0ebee713031f00b",
+            "criterionClassId": "659c565010674979b464146c",
+            "type": 0
+          },
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d6c77a1438740f01bd3b7",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "课题结题",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d6c77e0ebee713031f014",
+            "criterionClassId": "659c565010674979b464146c",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "课题研究",
+        "id": "659c565010674979b464146c",
+        "status": 20
+      },
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d6f86a1438740f01bd4b7",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "教学、论文、案例获奖",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d6f86e0ebee713031f015",
+            "criterionClassId": "659c565010674979b464146d",
+            "type": 0
+          },
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d702ea1438740f01bd4e0",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "论文、案例发表",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d702ee0ebee713031f024",
+            "criterionClassId": "659c565010674979b464146d",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "专业成果",
+        "id": "659c565010674979b464146d",
+        "status": 20
+      }
+    ],
+    "status": 20
+  },
+  {
+    "submitCount": 0,
+    "finishCount": 0,
+    "recordCount": 0,
+    "name": "团队与合作",
+    "id": "659c41a910674979b464144e",
+    "childs": [
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659d70c5a1438740f01bd504",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "文明班组创建",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659d70c5e0ebee713031f027",
+            "criterionClassId": "659c432710674979b464145a",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "团结爱校",
+        "id": "659c432710674979b464145a",
+        "status": 20
+      }
+    ],
+    "status": 20
+  },
+  {
+    "submitCount": 0,
+    "finishCount": 0,
+    "recordCount": 0,
+    "name": "特色项目",
+    "id": "659c41ae10674979b464144f",
+    "childs": [
+      {
+        "submitCount": 0,
+        "finishCount": 0,
+        "datas": [
+          {
+            "dateHint": "记录归属日期",
+            "criterionId": "659c9d394413762a879c9f8b",
+            "evlaueCount": 0,
+            "finishCount": 0,
+            "name": "特色项目",
+            "viewType": 0,
+            "dataTypeAsk": 0,
+            "evalTeacher": false,
+            "relationId": "659c9d3910674979b46414ee",
+            "criterionClassId": "659c41b910674979b4641450",
+            "type": 0
+          }
+        ],
+        "recordCount": 0,
+        "name": "特色项目",
+        "id": "659c41b910674979b4641450",
+        "status": 20
+      }
+    ],
+    "status": 20
+  }
+]

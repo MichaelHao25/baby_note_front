@@ -1,0 +1,773 @@
+{
+  "dimensionTree": [
+    {
+      "name": "实践教学",
+      "scoreType": 0,
+      "id": "659c68574413762a879c3afe",
+      "levels": [
+        {
+          "level": "市",
+          "desc": "",
+          "score": 4,
+          "specialScore": 0,
+          "scoreMap": {},
+          "seq": 1,
+          "hide": false
+        },
+        {
+          "level": "外省市",
+          "desc": "",
+          "score": 3,
+          "specialScore": 0,
+          "scoreMap": {},
+          "seq": 2,
+          "hide": false
+        },
+        {
+          "level": "学区、集团",
+          "desc": "",
+          "score": 2,
+          "specialScore": 0,
+          "scoreMap": {},
+          "seq": 3,
+          "hide": false
+        },
+        {
+          "level": "校级开放",
+          "desc": "",
+          "score": 1,
+          "specialScore": 0,
+          "scoreMap": {},
+          "seq": 4,
+          "hide": false
+        }
+      ],
+      "indexMap": {
+        "0": 8,
+        "1": 0,
+        "2": 7,
+        "3": 37
+      }
+    }
+  ],
+  "teacherData": [
+    {
+      "teacherId": "659befdda5f838b3673796bb",
+      "avg": 4,
+      "min": 4,
+      "evalCount": 1,
+      "max": 4,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796bb",
+          "subject": "",
+          "index": [0],
+          "evalUserName": "贲春梅"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 4,
+      "teacherIdName": "贲春梅"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c8",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/11/08",
+          "evalUserId": "659befdda5f838b3673796c8",
+          "index": [3],
+          "evalUserName": "陈奕"
+        },
+        {
+          "evalDate": "2023/11/21",
+          "evalUserId": "659befdda5f838b3673796c8",
+          "index": [3],
+          "evalUserName": "陈奕"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "陈奕"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c9",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796c9",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "陈贇"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "陈贇"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796cb",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/10/09",
+          "evalUserId": "659befdda5f838b3673796cb",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "房蕾"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "房蕾"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c4",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796c4",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "黄佳宁"
+        },
+        {
+          "evalDate": "2024/07/24",
+          "evalUserId": "659befdda5f838b3673796c4",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "黄佳宁"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "黄佳宁"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796cc",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/10/30",
+          "evalUserId": "659befdda5f838b3673796cc",
+          "index": [3],
+          "evalUserName": "郝曾仪"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "郝曾仪"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796cd",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796cd",
+          "index": [3],
+          "evalUserName": "洪源"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "洪源"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796b7",
+      "avg": 2.5,
+      "min": 1,
+      "evalCount": 4,
+      "max": 4,
+      "datas": [
+        {
+          "evalDate": "2023/12/25",
+          "evalUserId": "659befdda5f838b3673796b7",
+          "index": [3],
+          "evalUserName": "刘岚"
+        },
+        {
+          "evalDate": "2023/12/20",
+          "evalUserId": "659befdda5f838b3673796b7",
+          "index": [0],
+          "evalUserName": "刘岚"
+        },
+        {
+          "evalDate": "2023/12/20",
+          "evalUserId": "659befdda5f838b3673796b7",
+          "index": [0],
+          "evalUserName": "刘岚"
+        },
+        {
+          "evalDate": "2024/04/29",
+          "evalUserId": "659befdda5f838b3673796b7",
+          "index": [3],
+          "evalUserName": "刘岚"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 10,
+      "teacherIdName": "刘岚"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796ce",
+      "avg": 3.25,
+      "min": 1,
+      "evalCount": 4,
+      "max": 4,
+      "datas": [
+        {
+          "evalDate": "2023/09/25",
+          "evalUserId": "659befdda5f838b3673796ce",
+          "index": [3],
+          "evalUserName": "林赛赛"
+        },
+        {
+          "evalDate": "2024/01/11",
+          "evalUserId": "659befdda5f838b3673796ce",
+          "index": [0],
+          "evalUserName": "林赛赛"
+        },
+        {
+          "evalDate": "2024/01/11",
+          "evalUserId": "659befdda5f838b3673796ce",
+          "index": [0],
+          "evalUserName": "林赛赛"
+        },
+        {
+          "evalDate": "2024/01/11",
+          "evalUserId": "659befdda5f838b3673796ce",
+          "index": [0],
+          "evalUserName": "林赛赛"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 13,
+      "teacherIdName": "林赛赛"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c5",
+      "avg": 1.5,
+      "min": 1,
+      "evalCount": 2,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2024/01/20",
+          "evalUserId": "659befdda5f838b3673796c5",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "马燕萍"
+        },
+        {
+          "evalDate": "2024/07/25",
+          "evalUserId": "659befdda5f838b3673796c5",
+          "subject": "",
+          "index": [2],
+          "evalUserName": "马燕萍"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 3,
+      "teacherIdName": "马燕萍"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c2",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796c2",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "齐虹"
+        },
+        {
+          "evalDate": "2024/07/28",
+          "evalUserId": "659befdda5f838b3673796c2",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "齐虹"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "齐虹"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796d4",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/17",
+          "evalUserId": "659befdda5f838b3673796d4",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "宋青云"
+        },
+        {
+          "evalDate": "2024/01/17",
+          "evalUserId": "659befdda5f838b3673796d4",
+          "subject": "",
+          "index": [2],
+          "evalUserName": "宋青云"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "宋青云"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c3",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796c3",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "吴健群"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "吴健群"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c6",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/12/12",
+          "evalUserId": "659befdda5f838b3673796c6",
+          "index": [3],
+          "evalUserName": "王晋"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "王晋"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796d6",
+      "avg": 2,
+      "min": 2,
+      "evalCount": 1,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796d6",
+          "index": [2],
+          "evalUserName": "王栋"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "王栋"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796d7",
+      "avg": 1.5,
+      "min": 1,
+      "evalCount": 2,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2023/12/20",
+          "evalUserId": "659befdda5f838b3673796d7",
+          "index": [3],
+          "evalUserName": "王凌"
+        },
+        {
+          "evalDate": "2023/05/31",
+          "evalUserId": "659befdda5f838b3673796d7",
+          "index": [2],
+          "evalUserName": "王凌"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 3,
+      "teacherIdName": "王凌"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796d8",
+      "avg": 2.5,
+      "min": 1,
+      "evalCount": 4,
+      "max": 4,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796d8",
+          "index": [3],
+          "evalUserName": "王晔"
+        },
+        {
+          "evalDate": "2023/12/21",
+          "evalUserId": "659befdda5f838b3673796d8",
+          "index": [0],
+          "evalUserName": "王晔"
+        },
+        {
+          "evalDate": "2024/01/03",
+          "evalUserId": "659befdda5f838b3673796d8",
+          "index": [0],
+          "evalUserName": "王晔"
+        },
+        {
+          "evalDate": "2024/08/20",
+          "evalUserId": "659befdda5f838b3673796d8",
+          "index": [3],
+          "evalUserName": "王晔"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 10,
+      "teacherIdName": "王晔"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796d9",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796d9",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "吴晓艳"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "吴晓艳"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796da",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/11/21",
+          "evalUserId": "659befdda5f838b3673796da",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "薛峰"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "薛峰"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796dc",
+      "avg": 1.5,
+      "min": 1,
+      "evalCount": 2,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796dc",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "徐文燕"
+        },
+        {
+          "evalDate": "2024/07/27",
+          "evalUserId": "659befdda5f838b3673796dc",
+          "subject": "",
+          "index": [2],
+          "evalUserName": "徐文燕"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 3,
+      "teacherIdName": "徐文燕"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796dd",
+      "avg": 1.5,
+      "min": 1,
+      "evalCount": 2,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2023/11/08",
+          "evalUserId": "659befdda5f838b3673796dd",
+          "index": [3],
+          "evalUserName": "许鑫"
+        },
+        {
+          "evalDate": "2023/11/22",
+          "evalUserId": "659befdda5f838b3673796dd",
+          "index": [2],
+          "evalUserName": "许鑫"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 3,
+      "teacherIdName": "许鑫"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796bc",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796bc",
+          "index": [3],
+          "evalUserName": "严明丽"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "严明丽"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796bf",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796bf",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "杨骏"
+        },
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796bf",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "杨骏"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "杨骏"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796df",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796df",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "杨健"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "杨健"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e1",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796e1",
+          "index": [3],
+          "evalUserName": "袁晓影"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "袁晓影"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796c0",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/11/20",
+          "evalUserId": "659befdda5f838b3673796c0",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "周雅君"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "周雅君"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e2",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796e2",
+          "index": [3],
+          "evalUserName": "张斌"
+        },
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796e2",
+          "index": [3],
+          "evalUserName": "张斌"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "张斌"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e5",
+      "avg": 2,
+      "min": 2,
+      "evalCount": 1,
+      "max": 2,
+      "datas": [
+        {
+          "evalDate": "2023/12/26",
+          "evalUserId": "659befdda5f838b3673796e5",
+          "index": [2],
+          "evalUserName": "张玲"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "张玲"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e6",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796e6",
+          "index": [3],
+          "evalUserName": "张敏"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "张敏"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e7",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/11/14",
+          "evalUserId": "659befdda5f838b3673796e7",
+          "index": [3],
+          "evalUserName": "张敏燕"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "张敏燕"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796e9",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 1,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2023/10/23",
+          "evalUserId": "659befdda5f838b3673796e9",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "朱佳玲"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 1,
+      "teacherIdName": "朱佳玲"
+    },
+    {
+      "teacherId": "659befdda5f838b3673796eb",
+      "avg": 1,
+      "min": 1,
+      "evalCount": 2,
+      "max": 1,
+      "datas": [
+        {
+          "evalDate": "2024/01/19",
+          "evalUserId": "659befdda5f838b3673796eb",
+          "index": [3],
+          "evalUserName": "邹圣劭"
+        },
+        {
+          "evalDate": "2024/08/28",
+          "evalUserId": "659befdda5f838b3673796eb",
+          "subject": "",
+          "index": [3],
+          "evalUserName": "邹圣劭"
+        }
+      ],
+      "icon": "https://yxyspbase.yxuer.com/common-head.png",
+      "sum": 2,
+      "teacherIdName": "邹圣劭"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+.toggle-item {
+    cursor: pointer;
+}
+
+.toggle-item-active {
+    background: linear-gradient(142deg, #89C1F9 0%, #518DF1 100%) !important;
+
+    .toggle-item-title {
+        color: #fff;
+    }
+}
+
+.main-tab-item {
+    color: #000;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main-tab-item-active {
+    color: #126bfe;
+    background: #eaf2ff;
+}
+
+.main-content .ant-card-body {
+    padding: 10px;
+}
+
+.card-item:hover .detail-link {
+    display: block;
+}

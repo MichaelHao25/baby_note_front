@@ -1,0 +1,147 @@
+[
+  {
+    "id": "659bb05210674979b464140c",
+    "createDate": "2024/01/08 16:20:34",
+    "lastModifiedDate": "2024/01/08 16:20:34",
+    "subject": "数学",
+    "seq": 2,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "659bb05210674979b464140d",
+    "createDate": "2024/01/08 16:20:34",
+    "lastModifiedDate": "2024/01/08 16:20:34",
+    "subject": "英语",
+    "seq": 3,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "659bb05210674979b464140b",
+    "createDate": "2025/05/15 23:03:10",
+    "lastModifiedDate": "2025/05/15 23:03:10",
+    "subject": "语文",
+    "seq": 1,
+    "show": 0,
+    "gradeName": {},
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e1",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "道法",
+    "seq": 4,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e2",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "体育",
+    "seq": 5,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e3",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "体健",
+    "seq": 6,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e4",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "唱游",
+    "seq": 7,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e5",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "音乐",
+    "seq": 8,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e6",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "美术",
+    "seq": 9,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e8",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "探究",
+    "seq": 11,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e7",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "信息科技",
+    "seq": 10,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5e9",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "科技",
+    "seq": 12,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5ea",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "拓展",
+    "seq": 13,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5eb",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "拓展（体）",
+    "seq": 14,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5ec",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "拓展（心）",
+    "seq": 15,
+    "show": 0,
+    "schoolCode": "RBI850"
+  },
+  {
+    "id": "65a0a42bc6e696556b64c5ed",
+    "createDate": "2024/01/12 10:30:03",
+    "lastModifiedDate": "2024/01/12 10:30:03",
+    "subject": "拓展（科）",
+    "seq": 16,
+    "show": 0,
+    "schoolCode": "RBI850"
+  }
+]
