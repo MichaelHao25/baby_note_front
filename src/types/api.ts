@@ -28,6 +28,10 @@ export interface EatRequest {
    * 大便
    */
   poo: boolean;
+  /**
+   * 母乳
+   */
+  breastMilk: boolean;
 }
 
 export interface EatListRequest {

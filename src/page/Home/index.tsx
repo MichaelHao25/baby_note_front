@@ -28,6 +28,7 @@ export const Component = () => {
     milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
     pee: false,
     poo: false,
+    breastMilk: false,
   });
   const milkAmountList = [50, 80, 100];
   //   useEffect(() => {
@@ -123,9 +124,10 @@ export const Component = () => {
           media={<IconFont icon="icon-shijianrili" />}
         />
       </List>
-      <BlockHeader>大小便情况</BlockHeader>
+      <BlockHeader>其他事项</BlockHeader>
       <List strong inset>
         {[
+          { key: "breastMilk", value: params.breastMilk, title: "母乳" },
           { key: "pee", value: params.pee, title: "小便 💦" },
           { key: "poo", value: params.poo, title: "大便 💩" },
         ].map((item) => {
@@ -171,6 +173,7 @@ export const Component = () => {
                   milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
                   pee: false,
                   poo: false,
+                  breastMilk: false,
                 });
                 GlobalNotificationService.next({
                   opened: true,

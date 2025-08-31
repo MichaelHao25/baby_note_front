@@ -30,10 +30,13 @@ export const Component = () => {
             <TableRow header>
               <TableCell header>奶量</TableCell>
               <TableCell header className="text-right">
-                是否小便
+                母乳
               </TableCell>
               <TableCell header className="text-right">
-                是否大便
+                小便
+              </TableCell>
+              <TableCell header className="text-right">
+                大便
               </TableCell>
               <TableCell header className="text-right">
                 喝奶时间
@@ -46,10 +49,13 @@ export const Component = () => {
                 <TableRow key={item.id}>
                   <TableCell>{item.milkAmount}ml</TableCell>
                   <TableCell className="text-right">
-                    {item.pee ? "是" : "否"}
+                    {item.breastMilk ? "✅" : "❌"}
                   </TableCell>
                   <TableCell className="text-right">
-                    {item.poo ? "是" : "否"}
+                    {item.pee ? "✅" : "❌"}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {item.poo ? "✅" : "❌"}
                   </TableCell>
                   <TableCell className="text-right">
                     {dayjs(item.milkTime).format("YYYY-MM-DD HH:mm")}
