@@ -8,7 +8,7 @@ import type {
 } from "../types/api";
 
 const baseUrl = import.meta.env.DEV
-  ? "http://127.0.0.1/api/v1"
+  ? "http://127.0.0.1:8080/api/v1"
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -21,7 +21,7 @@ export const apiSlice = createApi({
 
       // 如果token存在，添加到请求头
       if (token) {
-        headers.set("token", token);
+        headers.set("authorization", `Bearer ${token}`);
       }
       // @ts-ignore
       if (!(arg?.body instanceof FormData)) {
