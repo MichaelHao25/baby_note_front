@@ -1,13 +1,15 @@
-import { Toast } from "konsta/react";
+import { Notification } from "konsta/react";
 import { useEffect, useRef, useState } from "react";
-import { GlobalToastService, type IToast } from "./Toast";
+import { GlobalNotificationService, type INotification } from "./Notification";
 
-export const GlobalToast = () => {
-  const [state, setState] = useState<null | IToast>(null);
+export const GlobalNotification = () => {
+  const [state, setState] = useState<null | INotification>(null);
 
   const timerId = useRef<number>(0);
   useEffect(() => {
-    const subscription = GlobalToastService.subscribe((value) => {
+    const subscription = GlobalNotificationService.subscribe((value) => {
+      console.log(value);
+
       if (value === null) {
         setState((prev) => ({ ...prev, opened: false }));
       } else {
@@ -24,9 +26,10 @@ export const GlobalToast = () => {
     };
   }, []);
 
+  console.log(state);
+
   //   if (state) {
   // }
   // return <></>;
-  const { title, ...more } = state || {};
-  return <Toast {...more}>{title}</Toast>;
+  return <Notification {...state} />;
 };

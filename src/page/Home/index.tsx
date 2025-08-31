@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import {
   BlockHeader,
-  Button,
   Checkbox,
   Chip,
   Link,
@@ -10,63 +9,50 @@ import {
   ListInput,
   ListItem,
 } from "konsta/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { GlobalNotificationService } from "../../components/GlobalNotification/Notification";
 import { GlobalToastService } from "../../components/GlobalToast/Toast";
 import IconFont from "../../components/IconFont";
+import { useAddEatMutation } from "../../store/apiSlice";
+import type { EatRequest } from "../../types/api";
 
 export async function loader() {
   return {
     title: "教师量表",
   };
 }
-interface IParams {
-  /**
-   * 奶量单位ml
-   */
-  milkAmount: number;
-  /**
-   * 吃奶时间
-   */
-  milkTime: string;
-  /**
-   * 小便
-   */
-  pee: boolean;
-  /**
-   * 大便
-   */
-  poo: boolean;
-}
+
 export const Component = () => {
-  const [params, updateParams] = useState<IParams>({
+  const [params, updateParams] = useState<EatRequest>({
     milkAmount: 0,
     milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
     pee: false,
     poo: false,
   });
   const milkAmountList = [50, 80, 100];
-  useEffect(() => {
-    setTimeout(() => {
-      GlobalToastService.next({
-        opened: true,
-        position: "center",
-        children: "1111",
-        button: (
-          <Button
-            rounded
-            clear
-            small
-            inline
-            onClick={() => {
-              GlobalToastService.next(null);
-            }}
-          >
-            关闭
-          </Button>
-        ),
-      });
-    }, 1000 * 10);
-  }, []);
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       GlobalToastService.next({
+  //         opened: true,
+  //         position: "center",
+  //         children: "1111",
+  //         button: (
+  //           <Button
+  //             rounded
+  //             clear
+  //             small
+  //             inline
+  //             onClick={() => {
+  //               GlobalToastService.next(null);
+  //             }}
+  //           >
+  //             关闭
+  //           </Button>
+  //         ),
+  //       });
+  //     }, 1000 * 10);
+  //   }, []);
+  const [handler, { isLoading }] = useAddEatMutation();
   return (
     <>
       <BlockHeader>
@@ -165,7 +151,48 @@ export const Component = () => {
         })}
       </List>
       <List strong inset>
-        <ListButton>添加</ListButton>
+        <ListButton
+          onClick={() => {
+            if (isLoading) {
+              return;
+            }
+            if (params.milkAmount === 0) {
+              GlobalToastService.next({
+                opened: true,
+                position: "center",
+                title: "请输入本次喝奶量,当前为0ml",
+              });
+              return;
+            }
+            handler(params).then((res) => {
+              if (res?.data?.success) {
+                updateParams({
+                  milkAmount: 0,
+                  milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
+                  pee: false,
+                  poo: false,
+                });
+                GlobalNotificationService.next({
+                  opened: true,
+                  title: "添加成功",
+                  subtitle: "本次记录添加成功,继续加油哦",
+                  icon: <IconFont icon="icon-chenggong" className="text-3xl" />,
+                  duration: 2000,
+                });
+              } else {
+                GlobalNotificationService.next({
+                  opened: true,
+                  title: "添加失败",
+                  subtitle: "本次记录添加失败，请稍后重试",
+                  icon: <IconFont icon="icon-shibai" className="text-3xl" />,
+                  duration: 2000,
+                });
+              }
+            });
+          }}
+        >
+          添加
+        </ListButton>
       </List>
     </>
   );

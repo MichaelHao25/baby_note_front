@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 import ErrorBoundary from "../../components/ErrorBoundary";
+import { GlobalNotification } from "../../components/GlobalNotification";
 import { GlobalToast } from "../../components/GlobalToast";
 import PermissionGuard from "../../components/PermissionGuard";
 
@@ -16,6 +17,7 @@ export const GlobalLayout = () => {
       {/* </div>
       </div> */}
       <GlobalToast />
+      <GlobalNotification />
     </PermissionGuard>
   );
 };

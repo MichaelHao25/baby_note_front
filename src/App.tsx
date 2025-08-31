@@ -68,13 +68,12 @@ function AppContent() {
     (state: RootState) => state.user.isInitialized
   );
   const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get("token");
-  const school_id = urlParams.get("school_id");
+  const user = urlParams.get("u");
+  const password = urlParams.get("p");
   useEffect(() => {
     handleUrlToken();
   }, []);
-
-  if (token && school_id) {
+  if (user && password) {
     if (isInitialized !== true) {
       return (
         <Page>

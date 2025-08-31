@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
 import type { RootState } from "../../store";
-import { hasAnyPermission } from "../../utils/permissions";
 
 interface IPermissionGuardProps {
   children: React.ReactNode;
@@ -15,27 +13,15 @@ interface IPermissionGuardProps {
 export const PermissionGuard: React.FC<IPermissionGuardProps> = ({
   children,
 }) => {
-  const navigate = useNavigate();
-  const userAuth = useSelector((state: RootState) => state.user.auth);
+  //   const navigate = useNavigate();
+  const token = useSelector((state: RootState) => state.user.token);
 
   // 检查用户是否有任何权限
-  const hasPermission = hasAnyPermission(userAuth);
+  //   const hasPermission = hasAnyPermission(userAuth);
 
   // 如果没有权限，显示403页面
-  if (!!hasPermission) {
-    return (
-      <div></div>
-      //   <Result
-      //     status="403"
-      //     title="403"
-      //     subTitle="抱歉，您没有访问权限。"
-      //     extra={
-      //       <Button type="primary" onClick={() => navigate("/")}>
-      //         返回首页
-      //       </Button>
-      //     }
-      //   />
-    );
+  if (!token) {
+    return <div></div>;
   }
 
   // 如果有权限，渲染子组件

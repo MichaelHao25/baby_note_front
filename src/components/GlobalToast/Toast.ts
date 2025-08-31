@@ -19,7 +19,7 @@ export interface IToast {
   /**
    * Toast title
    */
-  children?: React.ReactNode;
+  title?: React.ReactNode;
   /**
    * Toast duration in ms. Set to `0` to disable auto close
    */
