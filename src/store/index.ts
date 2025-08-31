@@ -1,9 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "./counterSlice";
 import { apiSlice } from "./apiSlice";
-import userSlice from "./userSlice";
+import counterSlice from "./counterSlice";
 import scaleCreateSlice from "./scaleCreateSlice";
-import { eexcelApiSlice } from "./eexcelApiSlice";
+import userSlice from "./userSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,13 +10,9 @@ export const store = configureStore({
     user: userSlice,
     scaleCreate: scaleCreateSlice,
     [apiSlice.reducerPath]: apiSlice.reducer,
-    [eexcelApiSlice.reducerPath]: eexcelApiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat([
-      apiSlice.middleware,
-      eexcelApiSlice.middleware,
-    ]),
+    getDefaultMiddleware().concat([apiSlice.middleware]),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
