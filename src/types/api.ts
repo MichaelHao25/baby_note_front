@@ -32,6 +32,10 @@ export interface EatRequest {
    * 母乳
    */
   breastMilk: boolean;
+  /**
+   * 是否喝水
+   */
+  drinkWater: boolean;
 }
 
 export interface EatListRequest {

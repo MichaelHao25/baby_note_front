@@ -22,14 +22,16 @@ export async function loader() {
   };
 }
 
+const defaultParams = {
+  milkAmount: 0,
+  milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
+  pee: false,
+  poo: false,
+  breastMilk: false,
+  drinkWater: false,
+};
 export const Component = () => {
-  const [params, updateParams] = useState<EatRequest>({
-    milkAmount: 0,
-    milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
-    pee: false,
-    poo: false,
-    breastMilk: false,
-  });
+  const [params, updateParams] = useState<EatRequest>(defaultParams);
   const milkAmountList = [50, 80, 100];
   //   useEffect(() => {
   //     setTimeout(() => {
@@ -83,6 +85,12 @@ export const Component = () => {
           type="number"
           accept={"number"}
           value={params.milkAmount}
+          onChange={(e) => {
+            const value = e.target.value;
+            updateParams((prev) => {
+              return { ...prev, milkAmount: Number(value) || 0 };
+            });
+          }}
           pattern="[0-9]*"
           placeholder="请输入本次喝奶量"
           media={<IconFont icon="icon-daichanfuwu" />}
@@ -130,6 +138,7 @@ export const Component = () => {
           { key: "breastMilk", value: params.breastMilk, title: "母乳" },
           { key: "pee", value: params.pee, title: "小便 💦" },
           { key: "poo", value: params.poo, title: "大便 💩" },
+          { key: "drinkWater", value: params.drinkWater, title: "喝水" },
         ].map((item) => {
           return (
             <ListItem
@@ -168,13 +177,8 @@ export const Component = () => {
             }
             handler(params).then((res) => {
               if (res?.data?.success) {
-                updateParams({
-                  milkAmount: 0,
-                  milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
-                  pee: false,
-                  poo: false,
-                  breastMilk: false,
-                });
+                defaultParams.milkTime = dayjs().format("YYYY-MM-DD HH:mm");
+                updateParams(defaultParams);
                 GlobalNotificationService.next({
                   opened: true,
                   title: "添加成功",
