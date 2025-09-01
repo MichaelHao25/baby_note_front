@@ -3,7 +3,6 @@ import {
   BlockHeader,
   Checkbox,
   Chip,
-  Link,
   List,
   ListButton,
   ListInput,
@@ -11,9 +10,11 @@ import {
 } from "konsta/react";
 import { useState } from "react";
 import { GlobalNotificationService } from "../../components/GlobalNotification/Notification";
-import { GlobalToastService } from "../../components/GlobalToast/Toast";
 import IconFont from "../../components/IconFont";
-import { useAddEatMutation } from "../../store/apiSlice";
+import {
+  useAddEatMutation,
+  useLazyGetEatItemByIdQuery,
+} from "../../store/apiSlice";
 import type { EatRequest } from "../../types/api";
 
 export async function loader() {
@@ -23,62 +24,22 @@ export async function loader() {
 }
 
 const defaultParams = {
-  milkAmount: 0,
+  milkAmount: import.meta.env.DEV ? "1000" : "",
   milkTime: dayjs().format("YYYY-MM-DD HH:mm"),
   pee: false,
   poo: false,
   breastMilk: false,
   drinkWater: false,
+  note: "",
 };
+const milkAmountList = [50, 80, 100];
 export const Component = () => {
   const [params, updateParams] = useState<EatRequest>(defaultParams);
-  const milkAmountList = [50, 80, 100];
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       GlobalToastService.next({
-  //         opened: true,
-  //         position: "center",
-  //         children: "1111",
-  //         button: (
-  //           <Button
-  //             rounded
-  //             clear
-  //             small
-  //             inline
-  //             onClick={() => {
-  //               GlobalToastService.next(null);
-  //             }}
-  //           >
-  //             关闭
-  //           </Button>
-  //         ),
-  //       });
-  //     }, 1000 * 10);
-  //   }, []);
   const [handler, { isLoading }] = useAddEatMutation();
+  const fetchItem = useLazyGetEatItemByIdQuery();
   return (
     <>
-      <BlockHeader>
-        <span className="flex gap-2 items-center justify-between w-full">
-          <span>喝奶情况</span>
-          <span className="flex gap-2">
-            <Link
-              onClick={() => {
-                console.log("333");
-              }}
-            >
-              <IconFont icon="icon-iconfontup" className="text-2xl" />
-            </Link>
-            <Link
-              onClick={() => {
-                console.log("333");
-              }}
-            >
-              <IconFont icon="icon-iconfontdown" className="text-2xl" />
-            </Link>
-          </span>
-        </span>
-      </BlockHeader>
+      <BlockHeader>喝奶情况</BlockHeader>
       <List strong inset>
         <ListInput
           label="这次喝奶多少ml?"
@@ -88,7 +49,7 @@ export const Component = () => {
           onChange={(e) => {
             const value = e.target.value;
             updateParams((prev) => {
-              return { ...prev, milkAmount: Number(value) || 0 };
+              return { ...prev, milkAmount: Number(value) || "" };
             });
           }}
           pattern="[0-9]*"
@@ -135,30 +96,64 @@ export const Component = () => {
       <BlockHeader>其他事项</BlockHeader>
       <List strong inset>
         {[
-          { key: "breastMilk", value: params.breastMilk, title: "母乳" },
-          { key: "pee", value: params.pee, title: "小便 💦" },
-          { key: "poo", value: params.poo, title: "大便 💩" },
-          { key: "drinkWater", value: params.drinkWater, title: "喝水" },
+          {
+            key: "breastMilk",
+            value: params.breastMilk,
+            title: "母乳",
+            type: "checkbox",
+          },
+          { key: "pee", value: params.pee, title: "小便 💦", type: "checkbox" },
+          { key: "poo", value: params.poo, title: "大便 💩", type: "checkbox" },
+          {
+            key: "drinkWater",
+            value: params.drinkWater,
+            title: "喝水",
+            type: "checkbox",
+          },
+          {
+            key: "note",
+            value: params.note,
+            title: "喝水",
+            type: "area",
+          },
         ].map((item) => {
-          return (
-            <ListItem
-              key={item.key}
-              label
-              title={item.title}
-              media={
-                <Checkbox
-                  checked={item.value}
-                  component="div"
-                  name="my-checkbox"
-                  onChange={(e) =>
-                    updateParams((prev) => {
-                      return { ...prev, [item.key]: e.target.checked };
-                    })
-                  }
-                />
-              }
-            />
-          );
+          const map = {
+            checkbox: (
+              <ListItem
+                key={item.key}
+                label
+                title={item.title}
+                media={
+                  <Checkbox
+                    checked={item.value as boolean}
+                    component="div"
+                    name="my-checkbox"
+                    onChange={(e) =>
+                      updateParams((prev) => {
+                        return { ...prev, [item.key]: e.target.checked };
+                      })
+                    }
+                  />
+                }
+              />
+            ),
+            area: (
+              <ListInput
+                label="备注"
+                type="textarea"
+                placeholder="请输入其他的备注信息"
+                value={item.value as string}
+                onChange={(e) =>
+                  updateParams((prev) => {
+                    return { ...prev, [item.key]: e.target.value };
+                  })
+                }
+                media={<IconFont icon="icon-jishiben" className="text-2xl" />}
+                inputClassName="!h-20 resize-none"
+              />
+            ),
+          };
+          return map[item.type as keyof typeof map];
         })}
       </List>
       <List strong inset>
@@ -167,15 +162,16 @@ export const Component = () => {
             if (isLoading) {
               return;
             }
-            if (params.milkAmount === 0) {
-              GlobalToastService.next({
-                opened: true,
-                position: "center",
-                title: "请输入本次喝奶量,当前为0ml",
-              });
+            const parseMilkAmount = Number(params.milkAmount);
+            if (isNaN(parseMilkAmount)) {
+              alert("请输入合法的奶量数字");
               return;
             }
-            handler(params).then((res) => {
+            if (parseMilkAmount === 0) {
+              alert("请输入本次喝奶量,当前为0ml");
+              return;
+            }
+            handler({ ...params, milkAmount: parseMilkAmount }).then((res) => {
               if (res?.data?.success) {
                 defaultParams.milkTime = dayjs().format("YYYY-MM-DD HH:mm");
                 updateParams(defaultParams);

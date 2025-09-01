@@ -15,7 +15,7 @@ export interface EatRequest {
   /**
    * 奶量单位ml
    */
-  milkAmount: number;
+  milkAmount: number | string;
   /**
    * 吃奶时间
    */
@@ -36,9 +36,17 @@ export interface EatRequest {
    * 是否喝水
    */
   drinkWater: boolean;
+  /**
+   * 备注
+   */
+  note: string;
 }
 
 export interface EatListRequest {
   current?: number;
   pageSize?: number;
+}
+
+export interface EatItemRequest {
+  _id: string;
 }
