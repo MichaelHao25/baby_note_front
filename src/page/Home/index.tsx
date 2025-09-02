@@ -11,10 +11,7 @@ import {
 import { useState } from "react";
 import { GlobalNotificationService } from "../../components/GlobalNotification/Notification";
 import IconFont from "../../components/IconFont";
-import {
-  useAddEatMutation,
-  useLazyGetEatItemByIdQuery,
-} from "../../store/apiSlice";
+import { useAddEatMutation } from "../../store/apiSlice";
 import type { EatRequest } from "../../types/api";
 
 export async function loader() {
@@ -36,7 +33,6 @@ const milkAmountList = [50, 80, 100];
 export const Component = () => {
   const [params, updateParams] = useState<EatRequest>(defaultParams);
   const [handler, { isLoading }] = useAddEatMutation();
-  const fetchItem = useLazyGetEatItemByIdQuery();
   return (
     <>
       <BlockHeader>喝奶情况</BlockHeader>
@@ -49,7 +45,7 @@ export const Component = () => {
           onChange={(e) => {
             const value = e.target.value;
             updateParams((prev) => {
-              return { ...prev, milkAmount: Number(value) || "" };
+              return { ...prev, milkAmount: Number(value) };
             });
           }}
           pattern="[0-9]*"
@@ -165,10 +161,6 @@ export const Component = () => {
             const parseMilkAmount = Number(params.milkAmount);
             if (isNaN(parseMilkAmount)) {
               alert("请输入合法的奶量数字");
-              return;
-            }
-            if (parseMilkAmount === 0) {
-              alert("请输入本次喝奶量,当前为0ml");
               return;
             }
             handler({ ...params, milkAmount: parseMilkAmount }).then((res) => {
