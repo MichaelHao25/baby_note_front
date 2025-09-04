@@ -9,7 +9,10 @@ import {
   TableRow,
 } from "konsta/react";
 import { useNavigate } from "react-router";
-import { useGetEatListQuery } from "../../store/apiSlice";
+import {
+  useGetEatListQuery,
+  useRemoveEatItemByIdMutation,
+} from "../../store/apiSlice";
 
 export async function loader() {
   return {
@@ -21,6 +24,8 @@ export const Component = () => {
     current: 1,
     pageSize: 100,
   });
+  const [removeHandler, { isLoading: removeIsLoading }] =
+    useRemoveEatItemByIdMutation();
   const navigate = useNavigate();
 
   const { list = [] } = data?.data || {};
@@ -58,7 +63,7 @@ export const Component = () => {
           <TableBody>
             {list.map((item: any) => {
               return (
-                <TableRow key={item.id}>
+                <TableRow key={item._id}>
                   <TableCell>{item.milkAmount}ml</TableCell>
                   <TableCell className="text-center">
                     {item.breastMilk === true && "✅"}
@@ -92,7 +97,22 @@ export const Component = () => {
                       >
                         编辑
                       </Link>
-                      <Link className="text-red-500 text-nowrap">删除</Link>
+                      <Link
+                        className="text-red-500 text-nowrap"
+                        onClick={() => {
+                          if (removeIsLoading) {
+                            return;
+                          }
+                          const res = confirm(
+                            `确定要删除${dayjs(item.milkTime).format("MM-DD HH:mm")}这条数据吗？`
+                          );
+                          if (res) {
+                            removeHandler({ _id: item._id });
+                          }
+                        }}
+                      >
+                        删除
+                      </Link>
                     </div>
                   </TableCell>
                 </TableRow>

@@ -50,3 +50,7 @@ export interface EatListRequest {
 export interface EatItemRequest {
   _id: string;
 }
+
+export interface IRemoveEatItemById {
+  _id: string;
+}

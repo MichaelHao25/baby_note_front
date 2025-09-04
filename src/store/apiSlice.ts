@@ -4,12 +4,13 @@ import type {
   EatListRequest,
   EatRequest,
   EatResponse,
+  IRemoveEatItemById,
   LoginRequest,
   LoginResponse,
 } from "../types/api";
 
 const baseUrl = import.meta.env.DEV
-  ? "http://192.168.100.101:8080/api/v1"
+  ? "http://127.0.0.1:8080/api/v1"
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -25,10 +26,10 @@ export const apiSlice = createApi({
         headers.set("authorization", `Bearer ${token}`);
       }
       // @ts-ignore
-      if (!(arg?.body instanceof FormData)) {
-        // 添加其他必要的请求头
-        headers.set("Content-Type", "application/json");
-      }
+      //   if (!(arg?.body instanceof FormData)) {
+      // 添加其他必要的请求头
+      // headers.set("Content-Type", "application/json");
+      //   }
       headers.set("Accept", "application/json");
 
       return headers;
@@ -48,8 +49,8 @@ export const apiSlice = createApi({
         url: "/eat",
         method: "POST",
         body: params,
-        tags: ["Eat"],
       }),
+      invalidatesTags: ["Eat"],
     }),
 
     getEatList: builder.query<EatResponse, EatListRequest>({
@@ -57,15 +58,22 @@ export const apiSlice = createApi({
         url: "/eat",
         method: "GET",
         params: params,
-        tags: ["Eat"],
       }),
+      providesTags: ["Eat"],
     }),
     getEatItemById: builder.query<EatResponse, EatItemRequest>({
       query: (params) => ({
         url: `/eat/${params._id}`,
         method: "GET",
-        tags: ["Eat"],
       }),
+      providesTags: ["Eat"],
+    }),
+    removeEatItemById: builder.mutation<EatResponse, IRemoveEatItemById>({
+      query: (params) => ({
+        url: `/eat/${params._id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Eat"],
     }),
   }),
 });
@@ -74,4 +82,5 @@ export const {
   useAddEatMutation,
   useGetEatListQuery,
   useLazyGetEatItemByIdQuery,
+  useRemoveEatItemByIdMutation,
 } = apiSlice;
