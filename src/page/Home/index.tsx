@@ -13,7 +13,6 @@ import { GlobalNotificationService } from "../../components/GlobalNotification/N
 import IconFont from "../../components/IconFont";
 import { useAddEatMutation } from "../../store/apiSlice";
 import type { EatRequest } from "../../types/api";
-
 export async function loader() {
   return {
     title: "教师量表",
@@ -29,10 +28,23 @@ const defaultParams = {
   drinkWater: false,
   note: "",
 };
+let i = 1;
 const milkAmountList = [50, 80, 100];
 export const Component = () => {
   const [params, updateParams] = useState<EatRequest>(defaultParams);
   const [handler, { isLoading }] = useAddEatMutation();
+  //   useEffect(() => {
+  //     (async () => {
+  //       if (i === 1) {
+  //         i++;
+  //         for (let index = 0; index < res.length; index++) {
+  //           const element = res[index];
+  //           await handler(element);
+  //           await new Promise((resolve) => setTimeout(resolve, 2000));
+  //         }
+  //       }
+  //     })();
+  //   }, []);
   return (
     <>
       <BlockHeader>喝奶情况</BlockHeader>

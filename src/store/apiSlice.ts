@@ -75,6 +75,12 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["Eat"],
     }),
+    getInsight: builder.query<EatResponse, void>({
+      query: () => ({
+        url: `/insight`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
@@ -83,4 +89,5 @@ export const {
   useGetEatListQuery,
   useLazyGetEatItemByIdQuery,
   useRemoveEatItemByIdMutation,
+  useGetInsightQuery,
 } = apiSlice;

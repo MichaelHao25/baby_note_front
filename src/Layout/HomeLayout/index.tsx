@@ -13,6 +13,7 @@ import {
 import { useRef, useState } from "react";
 import { Outlet, useNavigate } from "react-router";
 import IconFont from "../../components/IconFont";
+import { useGetInsightQuery } from "../../store/apiSlice";
 
 const config = [
   {
@@ -42,10 +43,11 @@ export const HomeLayout = () => {
   const [popoverOpened, setPopoverOpened] = useState(false);
   const popoverTargetRef = useRef(null);
   const navigate = useNavigate();
-
+  const { data, isLoading } = useGetInsightQuery();
   const openPopover = () => {
     setPopoverOpened(true);
   };
+
   return (
     <Page>
       <Navbar
@@ -59,9 +61,7 @@ export const HomeLayout = () => {
           </Link>
         }
       />
-      <BlockTitle>
-        最近七天的平均喝奶情况(480ml)相较于上周(430ml)有所上涨
-      </BlockTitle>
+      <BlockTitle>{isLoading ? "loading..." : data?.data}</BlockTitle>
 
       <Popover
         opened={popoverOpened}
