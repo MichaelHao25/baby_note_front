@@ -81,6 +81,12 @@ export const apiSlice = createApi({
         method: "GET",
       }),
     }),
+    getMilkAmountList: builder.query<EatResponse, void>({
+      query: () => ({
+        url: `/insight/getMilkAmountList`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
@@ -90,4 +96,5 @@ export const {
   useLazyGetEatItemByIdQuery,
   useRemoveEatItemByIdMutation,
   useGetInsightQuery,
+  useGetMilkAmountListQuery,
 } = apiSlice;

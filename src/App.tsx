@@ -35,10 +35,11 @@ const router = createBrowserRouter([
             },
           },
           {
-            path: "yellow",
+            path: "timeline",
             lazy: {
-              Component: async () => (await import("./page/Yellow")).Component,
-              loader: async () => (await import("./page/Yellow")).loader,
+              Component: async () =>
+                (await import("./page/Timeline")).Component,
+              loader: async () => (await import("./page/Timeline")).loader,
             },
           },
           {
@@ -55,6 +56,14 @@ const router = createBrowserRouter([
         lazy: {
           Component: async () => (await import("./page/Login")).Component,
           loader: async () => (await import("./page/Login")).loader,
+        },
+      },
+      {
+        path: "milkAmountList",
+        lazy: {
+          Component: async () =>
+            (await import("./page/MilkAmountList")).Component,
+          loader: async () => (await import("./page/MilkAmountList")).loader,
         },
       },
     ],

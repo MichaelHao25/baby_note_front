@@ -28,7 +28,7 @@ const defaultParams = {
   drinkWater: false,
   note: "",
 };
-let i = 1;
+// let i = 1;
 const milkAmountList = [50, 80, 100];
 export const Component = () => {
   const [params, updateParams] = useState<EatRequest>(defaultParams);

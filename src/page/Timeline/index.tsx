@@ -1,5 +1,12 @@
 import dayjs from "dayjs";
-import { BlockHeader, List, ListButton, ListInput } from "konsta/react";
+import {
+  BlockHeader,
+  BlockTitle,
+  List,
+  ListButton,
+  ListInput,
+  ListItem,
+} from "konsta/react";
 import { useState } from "react";
 import IconFont from "../../components/IconFont";
 
@@ -10,53 +17,49 @@ export async function loader() {
 }
 const defaultParams = {
   /**
-   * 称重时间
+   * 日记时间
    */
-  weightTime: dayjs().format("YYYY-MM-DD HH:mm"),
+  noteTime: dayjs().format("YYYY-MM-DD HH:mm"),
   /**
    * 称重记录
    */
-  weight: 0,
+  note: "",
 };
 interface IWeightRequest {
-  weight: number;
-  weightTime: string;
+  noteTime: string;
+  note: string;
 }
 
 export const Component = () => {
   const [params, updateParams] = useState<IWeightRequest>(defaultParams);
   return (
     <>
-      <BlockHeader>体重记录</BlockHeader>
+      <BlockHeader>时间线</BlockHeader>
       <List strong inset>
         <ListInput
-          label="这次体重秤出来是多少kg哇?"
-          type="number"
-          accept={"number"}
-          value={params.weight}
-          onChange={(e) => {
-            const value = e.target.value;
+          label="想要记点什么呢？"
+          type="textarea"
+          placeholder="请输入想要记录的内容"
+          value={params.note as string}
+          onChange={(e) =>
             updateParams((prev) => {
-              return { ...prev, weight: Number(value) };
-            });
-          }}
-          pattern="[0-9.]*"
-          placeholder="请输入本次的体重单位kg"
-          media={<IconFont icon="icon-yinger" />}
+              return { ...prev, note: e.target.value };
+            })
+          }
+          media={<IconFont icon="icon-jishiben" className="text-2xl" />}
+          inputClassName="!h-20 resize-none"
         />
 
         <ListInput
-          label={`称重时间`}
+          label={`时间`}
           type="datetime-local"
-          value={params.weightTime}
+          value={params.noteTime}
           onChange={(e) => {
             const value = e.target.value;
             updateParams((prev) => {
               return {
                 ...prev,
-                weightTime: value
-                  ? dayjs(value).format("YYYY-MM-DD HH:mm")
-                  : "",
+                noteTime: value ? dayjs(value).format("YYYY-MM-DD HH:mm") : "",
               };
             });
           }}
@@ -100,8 +103,17 @@ export const Component = () => {
           添加
         </ListButton>
       </List>
+      <BlockTitle>最近的事件</BlockTitle>
+      <List strong>
+        <ListItem title="去打了疫苗" after="2025-09-17" />
+        <ListItem title="宝宝出生了🐣" after="2025-07-1" />
+        <ListItem
+          title="测试很多文字测试很多文字测试很多文字测试很多文字测试很多文字测试很多文字测试很多文字"
+          after="2025-07-21"
+        />
+      </List>
     </>
   );
 };
 
-Component.displayName = "Weight";
+Component.displayName = "Timeline";

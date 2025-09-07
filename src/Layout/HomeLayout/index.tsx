@@ -27,11 +27,9 @@ const config = [
     label: "称体重",
   },
   {
-    path: "/yellow",
-    icon: (
-      <IconFont icon="icon-xinshengerhuangdanceding" className="text-4xl" />
-    ),
-    label: "测黄疸",
+    path: "/timeline",
+    icon: <IconFont icon="icon-zujian-shijianxian" className="text-4xl" />,
+    label: "时间线",
   },
   {
     path: "/chart",
@@ -70,17 +68,15 @@ export const HomeLayout = () => {
       >
         <List nested>
           <ListItem
-            title="待开发"
+            title="数据源-吃奶"
             link
-            onClick={() => setPopoverOpened(false)}
+            onClick={() => {
+              navigate("/milkAmountList");
+              setPopoverOpened(false);
+            }}
           />
           <ListItem
-            title="待开发"
-            link
-            onClick={() => setPopoverOpened(false)}
-          />
-          <ListItem
-            title="待开发"
+            title="数据源-体重"
             link
             onClick={() => setPopoverOpened(false)}
           />
