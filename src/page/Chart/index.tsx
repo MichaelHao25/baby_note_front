@@ -20,7 +20,7 @@ export const Component = () => {
   return (
     <>
       <Card header="每天吃奶情况">
-        <Canvas height={300}>
+        <Canvas height={300} pixelRatio={window.devicePixelRatio}>
           <Chart data={list}>
             <Axis
               field="date"
