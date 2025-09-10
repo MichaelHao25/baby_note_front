@@ -69,6 +69,15 @@ export const Component = () => {
       <List strong inset>
         <ListButton
           onClick={() => {
+            const { note, noteTime } = params;
+            if (!note) {
+              alert("记录的内容不能为空");
+              return;
+            }
+            if (!noteTime) {
+              alert("日期不能为空");
+              return;
+            }
             // if (isLoading) {
             //   return;
             // }

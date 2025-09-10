@@ -16,10 +16,10 @@ const defaultParams = {
   /**
    * 称重记录
    */
-  weight: 0,
+  weight: "",
 };
 interface IWeightRequest {
-  weight: number;
+  weight: number | string;
   weightTime: string;
 }
 
@@ -30,14 +30,14 @@ export const Component = () => {
       <BlockHeader>体重记录</BlockHeader>
       <List strong inset>
         <ListInput
-          label="这次体重秤出来是多少kg哇?"
+          label="本次的体重?(单位kg)"
           type="number"
           accept={"number"}
           value={params.weight}
           onChange={(e) => {
             const value = e.target.value;
             updateParams((prev) => {
-              return { ...prev, weight: Number(value) };
+              return { ...prev, weight: value };
             });
           }}
           pattern="[0-9.]*"
@@ -66,6 +66,16 @@ export const Component = () => {
       <List strong inset>
         <ListButton
           onClick={() => {
+            const { weight, weightTime } = params;
+            const parseWeight = Number(weight);
+            if (isNaN(parseWeight)) {
+              alert("请输入合格的体重数据");
+              return;
+            }
+            if (!weightTime) {
+              alert("日期不能为空");
+              return;
+            }
             // if (isLoading) {
             //   return;
             // }
