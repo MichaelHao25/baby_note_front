@@ -66,6 +66,13 @@ const router = createBrowserRouter([
           loader: async () => (await import("./page/MilkAmountList")).loader,
         },
       },
+      {
+        path: "weightList",
+        lazy: {
+          Component: async () => (await import("./page/WeightList")).Component,
+          loader: async () => (await import("./page/WeightList")).loader,
+        },
+      },
     ],
     errorElement: <Page404 />,
     HydrateFallback: GlobalSpinner,

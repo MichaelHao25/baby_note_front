@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.DEV
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",
-  tagTypes: ["Eat", "Categories", "Evaluate", "Examine"],
+  tagTypes: ["Eat", "Weight", "Timeline"],
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers, { arg }) => {
@@ -61,6 +61,53 @@ export const apiSlice = createApi({
       }),
       providesTags: ["Eat"],
     }),
+    addWeight: builder.mutation({
+      query: (params) => ({
+        url: "/weight",
+        method: "POST",
+        body: params,
+      }),
+      invalidatesTags: ["Weight"],
+    }),
+    getWeightList: builder.query({
+      query: (params) => ({
+        url: "/weight",
+        method: "GET",
+        params: params,
+      }),
+      providesTags: ["Weight"],
+    }),
+    removeWeightItemById: builder.mutation({
+      query: (params) => ({
+        url: `/weight/${params._id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Weight"],
+    }),
+
+    addTimeline: builder.mutation({
+      query: (params) => ({
+        url: "/timeline",
+        method: "POST",
+        body: params,
+      }),
+      invalidatesTags: ["Timeline"],
+    }),
+    getTimelineList: builder.query({
+      query: (params) => ({
+        url: "/timeline",
+        method: "GET",
+        params: params,
+      }),
+      providesTags: ["Timeline"],
+    }),
+    removeTimelineItemById: builder.mutation({
+      query: (params) => ({
+        url: `/timeline/${params._id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["Timeline"],
+    }),
     getEatItemById: builder.query<EatResponse, EatItemRequest>({
       query: (params) => ({
         url: `/eat/${params._id}`,
@@ -97,4 +144,10 @@ export const {
   useRemoveEatItemByIdMutation,
   useGetInsightQuery,
   useGetMilkAmountListQuery,
+  useGetWeightListQuery,
+  useAddWeightMutation,
+  useRemoveWeightItemByIdMutation,
+  useGetTimelineListQuery,
+  useAddTimelineMutation,
+  useRemoveTimelineItemByIdMutation,
 } = apiSlice;

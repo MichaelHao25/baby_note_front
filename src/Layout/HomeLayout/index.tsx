@@ -78,7 +78,10 @@ export const HomeLayout = () => {
           <ListItem
             title="数据源-体重"
             link
-            onClick={() => setPopoverOpened(false)}
+            onClick={() => {
+              navigate("/weightList");
+              setPopoverOpened(false);
+            }}
           />
         </List>
       </Popover>
