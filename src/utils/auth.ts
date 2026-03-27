@@ -22,11 +22,11 @@ export const handleUrlToken = async () => {
     try {
       // 调用获取token的接口
       const result = await store.dispatch(
-        apiSlice.endpoints.login.initiate({ username, password })
+        apiSlice.endpoints.login.initiate({ username, password }),
       );
       if (result.error) {
         alert(
-          result?.error?.data?.errorMessage || "登录失败，请检查用户名和密码"
+          result?.error?.data?.errorMessage || "登录失败，请检查用户名和密码",
         );
         return false;
       }

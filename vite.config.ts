@@ -12,4 +12,7 @@ export default defineConfig({
       bundler: "vite",
     }),
   ],
+  server: {
+    host: "0.0.0.0",
+  },
 });

@@ -10,7 +10,7 @@ import type {
 } from "../types/api";
 
 const baseUrl = import.meta.env.DEV
-  ? "http://127.0.0.1:8080/api/v1"
+  ? "http://192.168.100.214:8080/api/v1"
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",

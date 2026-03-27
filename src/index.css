@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @import "konsta/react/theme.css";
+
+/* 禁止页面选中复制 */
+html, body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 .icon {
   width: 1em;
   height: 1em;
