@@ -55,9 +55,6 @@ export const Component = () => {
             <TableRow header>
               <TableCell header>奶量</TableCell>
               <TableCell header className="text-center">
-                母乳
-              </TableCell>
-              <TableCell header className="text-center">
                 小便
               </TableCell>
               <TableCell header className="text-center">
@@ -65,6 +62,9 @@ export const Component = () => {
               </TableCell>
               <TableCell header className="text-center">
                 喝水
+              </TableCell>
+              <TableCell header className="text-center">
+                辅食
               </TableCell>
               <TableCell header className="text-center">
                 喝奶时间
@@ -83,10 +83,6 @@ export const Component = () => {
                 <TableRow key={item._id}>
                   <TableCell>{item.milkAmount}ml</TableCell>
                   <TableCell className="text-center">
-                    {item.breastMilk === true && "✅"}
-                    {item.breastMilk === false && "❌"}
-                  </TableCell>
-                  <TableCell className="text-center">
                     {item.pee === true && "✅"}
                     {item.pee === false && "❌"}
                   </TableCell>
@@ -97,6 +93,11 @@ export const Component = () => {
                   <TableCell className="text-center">
                     {item.drinkWater === true && "✅"}
                     {item.drinkWater === false && "❌"}
+                  </TableCell>
+                  <TableCell className="text-center text-nowrap">
+                    {(item.solidFoods ?? []).length > 0
+                      ? (item.solidFoods as string[]).join("、")
+                      : "-"}
                   </TableCell>
                   <TableCell className="text-center text-nowrap">
                     {dayjs(item.milkTime).format("MM-DD HH:mm")}

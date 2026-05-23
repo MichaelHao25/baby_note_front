@@ -1,8 +1,7 @@
 // 通用响应接口
 export interface ApiResponse<T = any> {
-  code: number; // 1为成功，0为失败
-  msg: string; // 提示消息
-  time: string;
+  success: boolean; // true为成功，false为失败
+  msg?: string; // 提示消息
   data: T;
 }
 export interface LoginResponse extends ApiResponse {}
@@ -37,6 +36,10 @@ export interface EatRequest {
    */
   drinkWater: boolean;
   /**
+   * 辅食列表
+   */
+  solidFoods?: string[];
+  /**
    * 备注
    */
   note: string;
@@ -54,3 +57,18 @@ export interface EatItemRequest {
 export interface IRemoveEatItemById {
   _id: string;
 }
+
+export interface BabyRequest {
+  name: string;
+  birthDate: string;
+  prematureDays?: number;
+}
+
+export interface BabyResponse extends ApiResponse<{
+  _id: string;
+  name: string;
+  birthDate: string;
+  prematureDays: number;
+  createdAt: string;
+  updatedAt: string;
+}> {}

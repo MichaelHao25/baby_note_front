@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import {
   BlockHeader,
-  Checkbox,
   Chip,
   List,
   ListButton,
@@ -9,10 +8,13 @@ import {
   ListItem,
 } from "konsta/react";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { GlobalNotificationService } from "../../components/GlobalNotification/Notification";
 import IconFont from "../../components/IconFont";
-import { useAddEatMutation } from "../../store/apiSlice";
+import { useAddEatMutation, useGetBabyQuery } from "../../store/apiSlice";
 import type { EatRequest } from "../../types/api";
+import { getAge, getCorrectedAge, getCorrectedDaysSinceBirth, getDaysSinceBirth, getZodiac, getZodiacEmoji } from "../../utils/baby";
+
 export async function loader() {
   return {
     title: "教师量表",
@@ -26,27 +28,86 @@ const defaultParams = {
   poo: false,
   breastMilk: false,
   drinkWater: false,
+  solidFoods: [] as string[],
   note: "",
 };
-// let i = 1;
+
 const milkAmountList = [50, 80, 100];
+
+const solidFoodPresets = [
+  "米糊",
+  "菜泥",
+  "肉泥",
+  "水果泥",
+  "蛋黄",
+  "米粉",
+  "粥",
+  "面条",
+];
+
 export const Component = () => {
   const [params, updateParams] = useState<EatRequest>(defaultParams);
   const [handler, { isLoading }] = useAddEatMutation();
-  //   useEffect(() => {
-  //     (async () => {
-  //       if (i === 1) {
-  //         i++;
-  //         for (let index = 0; index < res.length; index++) {
-  //           const element = res[index];
-  //           await handler(element);
-  //           await new Promise((resolve) => setTimeout(resolve, 2000));
-  //         }
-  //       }
-  //     })();
-  //   }, []);
+  const { data: babyData } = useGetBabyQuery();
+  const navigate = useNavigate();
+  const baby = babyData?.data;
+
+  const toggleSolidFood = (food: string) => {
+    updateParams((prev) => {
+      const foods = prev.solidFoods ?? [];
+      const next = foods.includes(food)
+        ? foods.filter((f) => f !== food)
+        : [...foods, food];
+      return { ...prev, solidFoods: next };
+    });
+  };
+
+  const [customFood, setCustomFood] = useState("");
+
+  const addCustomFood = () => {
+    const food = customFood.trim();
+    if (!food) return;
+    updateParams((prev) => {
+      const foods = prev.solidFoods ?? [];
+      if (foods.includes(food)) return prev;
+      return { ...prev, solidFoods: [...foods, food] };
+    });
+    setCustomFood("");
+  };
+
   return (
     <>
+      {/* 宝宝信息卡片 */}
+      {baby && (
+        <>
+          <BlockHeader>宝宝信息</BlockHeader>
+          <List strong inset>
+            <ListItem
+              title={
+                <div className="flex items-center justify-between w-full">
+                  <span className="font-bold text-lg">
+                    {getZodiacEmoji(baby.birthDate)} {baby.name}
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    {baby.prematureDays > 0
+                      ? `出生${getDaysSinceBirth(baby.birthDate)}天，纠正后${getCorrectedDaysSinceBirth(baby.birthDate, baby.prematureDays)}天`
+                      : `出生${getDaysSinceBirth(baby.birthDate)}天`}
+                  </span>
+                </div>
+              }
+              subtitle={
+                baby.prematureDays > 0
+                  ? `${getZodiac(baby.birthDate)} | ${getAge(baby.birthDate)} | 纠正：${getCorrectedAge(baby.birthDate, baby.prematureDays)}`
+                  : `${getZodiac(baby.birthDate)} | ${getAge(baby.birthDate)}`
+              }
+              link
+              onClick={() => navigate("/baby")}
+            />
+          </List>
+        </>
+      )}
+
+      {/* 喝奶情况 */}
       <BlockHeader>喝奶情况</BlockHeader>
       <List strong inset>
         <ListInput
@@ -68,7 +129,7 @@ export const Component = () => {
         <ListItem
           title={
             <div className="flex gap-2 w-full items-center">
-              <span className=" text-nowrap text-xs">常用奶量:</span>
+              <span className="text-nowrap text-xs">常用奶量:</span>
               {milkAmountList.map((limit) => (
                 <Chip
                   key={limit}
@@ -101,15 +162,68 @@ export const Component = () => {
           media={<IconFont icon="icon-shijianrili" />}
         />
       </List>
+
+      {/* 这次辅食 */}
+      <BlockHeader>这次辅食</BlockHeader>
+      <List strong inset>
+        <ListItem
+          title={
+            <div className="flex flex-wrap gap-2 items-center">
+              {solidFoodPresets.map((food) => (
+                <Chip
+                  key={food}
+                  outline
+                  onClick={() => toggleSolidFood(food)}
+                  className={
+                    (params.solidFoods ?? []).includes(food)
+                      ? "!bg-blue-500 !text-white"
+                      : ""
+                  }
+                >
+                  {food}
+                </Chip>
+              ))}
+            </div>
+          }
+        />
+        <ListItem
+          title={
+            <div className="flex gap-2 items-center">
+              <input
+                type="text"
+                placeholder="自定义辅食"
+                value={customFood}
+                onChange={(e) => setCustomFood(e.target.value)}
+                className="border border-gray-300 rounded px-2 py-1 text-sm flex-1 h-8"
+              />
+              <Chip onClick={addCustomFood}>添加</Chip>
+            </div>
+          }
+        />
+        {(params.solidFoods ?? []).length > 0 && (
+          <ListItem
+            title={
+              <div className="flex flex-wrap gap-2">
+                {(params.solidFoods ?? []).map((food) => (
+                  <Chip
+                    key={food}
+                    className="!bg-blue-100"
+                    deleteButton
+                    onDelete={() => toggleSolidFood(food)}
+                  >
+                    {food}
+                  </Chip>
+                ))}
+              </div>
+            }
+          />
+        )}
+      </List>
+
+      {/* 其他事项 */}
       <BlockHeader>其他事项</BlockHeader>
       <List strong inset>
         {[
-          {
-            key: "breastMilk",
-            value: params.breastMilk,
-            title: "母乳",
-            type: "checkbox",
-          },
           { key: "pee", value: params.pee, title: "小便 💦", type: "checkbox" },
           { key: "poo", value: params.poo, title: "大便 💩", type: "checkbox" },
           {
@@ -121,7 +235,7 @@ export const Component = () => {
           {
             key: "note",
             value: params.note,
-            title: "喝水",
+            title: "备注",
             type: "area",
           },
         ].map((item) => {
@@ -132,21 +246,22 @@ export const Component = () => {
                 label
                 title={item.title}
                 media={
-                  <Checkbox
+                  <input
+                    type="checkbox"
                     checked={item.value as boolean}
-                    component="div"
-                    name="my-checkbox"
                     onChange={(e) =>
                       updateParams((prev) => {
                         return { ...prev, [item.key]: e.target.checked };
                       })
                     }
+                    className="w-5 h-5"
                   />
                 }
               />
             ),
             area: (
               <ListInput
+                key={item.key}
                 label="备注"
                 type="textarea"
                 placeholder="请输入其他的备注信息"

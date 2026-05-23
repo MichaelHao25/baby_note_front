@@ -52,6 +52,13 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "baby",
+        lazy: {
+          Component: async () => (await import("./page/Baby")).Component,
+          loader: async () => (await import("./page/Baby")).loader,
+        },
+      },
+      {
         path: "login",
         lazy: {
           Component: async () => (await import("./page/Login")).Component,

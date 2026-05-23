@@ -83,6 +83,14 @@ export const HomeLayout = () => {
               setPopoverOpened(false);
             }}
           />
+          <ListItem
+            title="宝宝信息"
+            link
+            onClick={() => {
+              navigate("/baby");
+              setPopoverOpened(false);
+            }}
+          />
         </List>
       </Popover>
       <Outlet />

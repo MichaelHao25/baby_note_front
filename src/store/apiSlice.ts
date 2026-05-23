@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type {
+  BabyRequest,
+  BabyResponse,
   EatItemRequest,
   EatListRequest,
   EatRequest,
@@ -10,11 +12,11 @@ import type {
 } from "../types/api";
 
 const baseUrl = import.meta.env.DEV
-  ? "http://192.168.100.214:8080/api/v1"
+  ? "http://localhost:8080/api/v1"
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",
-  tagTypes: ["Eat", "Weight", "Timeline"],
+  tagTypes: ["Eat", "Weight", "Timeline", "Baby"],
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers, { arg }) => {
@@ -134,6 +136,32 @@ export const apiSlice = createApi({
         method: "GET",
       }),
     }),
+    addBaby: builder.mutation<BabyResponse, BabyRequest>({
+      query: (params) => ({
+        url: "/baby",
+        method: "POST",
+        body: params,
+      }),
+      invalidatesTags: ["Baby"],
+    }),
+    getBaby: builder.query<BabyResponse, void>({
+      query: () => ({
+        url: "/baby",
+        method: "GET",
+      }),
+      providesTags: ["Baby"],
+    }),
+    updateBaby: builder.mutation<
+      BabyResponse,
+      { _id: string; body: BabyRequest }
+    >({
+      query: ({ _id, body }) => ({
+        url: `/baby/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Baby"],
+    }),
   }),
 });
 export const {
@@ -150,4 +178,7 @@ export const {
   useGetTimelineListQuery,
   useAddTimelineMutation,
   useRemoveTimelineItemByIdMutation,
+  useAddBabyMutation,
+  useGetBabyQuery,
+  useUpdateBabyMutation,
 } = apiSlice;
