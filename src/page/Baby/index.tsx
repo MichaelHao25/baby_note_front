@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { BlockHeader, Link, List, ListButton, ListInput, Navbar, Page } from "konsta/react";
+import { BlockHeader, Link, List, ListButton, ListInput, ListItem, Navbar, Page, Radio } from "konsta/react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { GlobalNotificationService } from "../../components/GlobalNotification/Notification";
@@ -24,6 +24,7 @@ export const Component = () => {
 
   const existingBaby = babyData?.data;
   const [name, setName] = useState(existingBaby?.name ?? "");
+  const [gender, setGender] = useState(existingBaby?.gender ?? "male");
   const [birthDate, setBirthDate] = useState(
     existingBaby?.birthDate
       ? dayjs(existingBaby.birthDate).format("YYYY-MM-DD")
@@ -37,6 +38,7 @@ export const Component = () => {
   useEffect(() => {
     if (existingBaby) {
       setName(existingBaby.name ?? "");
+      setGender(existingBaby.gender ?? "male");
       setBirthDate(
         existingBaby.birthDate
           ? dayjs(existingBaby.birthDate).format("YYYY-MM-DD")
@@ -67,7 +69,7 @@ export const Component = () => {
     }
 
     const isEditing = !!existingBaby?._id;
-    const body = { name: name.trim(), birthDate, prematureDays: Number(prematureDays) || 0 };
+    const body = { name: name.trim(), gender, birthDate, prematureDays: Number(prematureDays) || 0 };
 
     try {
       let res;
@@ -130,6 +132,28 @@ export const Component = () => {
           onChange={(e) => setName(e.target.value)}
           placeholder="请输入婴儿姓名"
           media={<IconFont icon="icon-yinger" />}
+        />
+        <ListItem
+          label
+          title="男"
+          media={<IconFont icon="icon-nanhai" />}
+          after={<Radio
+            name="gender"
+            value="male"
+            checked={gender === "male"}
+            onChange={() => setGender("male")}
+          />}
+        />
+        <ListItem
+          label
+          title="女"
+          media={<IconFont icon="icon-nvhai" />}
+          after={<Radio
+            name="gender"
+            value="female"
+            checked={gender === "female"}
+            onChange={() => setGender("female")}
+          />}
         />
         <ListInput
           label="出生日期"

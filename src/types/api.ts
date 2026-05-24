@@ -60,6 +60,7 @@ export interface IRemoveEatItemById {
 
 export interface BabyRequest {
   name: string;
+  gender: string;
   birthDate: string;
   prematureDays?: number;
 }
@@ -67,6 +68,7 @@ export interface BabyRequest {
 export interface BabyResponse extends ApiResponse<{
   _id: string;
   name: string;
+  gender: 'male' | 'female';
   birthDate: string;
   prematureDays: number;
   createdAt: string;
