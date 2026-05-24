@@ -52,6 +52,13 @@ const router = createBrowserRouter([
         ],
       },
       {
+        path: "growth",
+        lazy: {
+          Component: async () => (await import("./page/Growth")).Component,
+          loader: async () => (await import("./page/Growth")).loader,
+        },
+      },
+      {
         path: "baby",
         lazy: {
           Component: async () => (await import("./page/Baby")).Component,
@@ -88,7 +95,7 @@ const router = createBrowserRouter([
 
 function AppContent() {
   const isInitialized = useSelector(
-    (state: RootState) => state.user.isInitialized
+    (state: RootState) => state.user.isInitialized,
   );
   const urlParams = new URLSearchParams(window.location.search);
   const user = urlParams.get("u");
