@@ -83,7 +83,7 @@ export const Component = () => {
                       <Link
                         className="text-blue-500 text-nowrap"
                         onClick={() => {
-                          navigate(`/edit/${item._id}`);
+                          navigate(`/weightEdit/${item._id}`);
                         }}
                       >
                         编辑

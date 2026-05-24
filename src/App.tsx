@@ -87,6 +87,13 @@ const router = createBrowserRouter([
           loader: async () => (await import("./page/WeightList")).loader,
         },
       },
+      {
+        path: "weightEdit/:id",
+        lazy: {
+          Component: async () => (await import("./page/EditWeight")).Component,
+          loader: async () => (await import("./page/EditWeight")).loader,
+        },
+      },
     ],
     errorElement: <Page404 />,
     HydrateFallback: GlobalSpinner,

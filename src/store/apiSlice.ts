@@ -86,6 +86,21 @@ export const apiSlice = createApi({
       }),
       invalidatesTags: ["Weight"],
     }),
+    getWeightItemById: builder.query({
+      query: (params) => ({
+        url: `/weight/${params._id}`,
+        method: "GET",
+      }),
+      providesTags: ["Weight"],
+    }),
+    updateWeight: builder.mutation({
+      query: ({ _id, ...body }) => ({
+        url: `/weight/${_id}`,
+        method: "PATCH",
+        body,
+      }),
+      invalidatesTags: ["Weight"],
+    }),
 
     addTimeline: builder.mutation({
       query: (params) => ({
@@ -175,6 +190,8 @@ export const {
   useGetWeightListQuery,
   useAddWeightMutation,
   useRemoveWeightItemByIdMutation,
+  useGetWeightItemByIdQuery,
+  useUpdateWeightMutation,
   useGetTimelineListQuery,
   useAddTimelineMutation,
   useRemoveTimelineItemByIdMutation,
