@@ -22,6 +22,7 @@ import type { GrowthMetric } from "../../types/growth";
 import {
   calculatePercentile,
   convertWeightRecordsToGrowthPoints,
+  convertLengthRecordsToGrowthPoints,
 } from "../../utils/growthDataProcessor";
 
 export async function loader() {
@@ -54,11 +55,19 @@ export const Component = () => {
 
   // 转换数据
   const growthData = babyInfo
-    ? convertWeightRecordsToGrowthPoints(
-        weightRecords,
-        babyInfo.birthDate,
-        babyInfo.prematureDays,
-      )
+    ? selectedMetric === 'length'
+      ? convertLengthRecordsToGrowthPoints(
+          weightRecords,
+          babyInfo.birthDate,
+          babyInfo.prematureDays,
+        )
+      : selectedMetric === 'weight'
+        ? convertWeightRecordsToGrowthPoints(
+            weightRecords,
+            babyInfo.birthDate,
+            babyInfo.prematureDays,
+          )
+        : [] // bmi 和 headCircumference 暂无数据处理
     : [];
 
   // 计算最新评估结果

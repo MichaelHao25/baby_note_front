@@ -22,7 +22,8 @@ export type CurveType = 'age' | 'length';
  */
 export interface WeightRecord {
   _id: string;
-  weight: number; // 体重（kg）
+  weight?: number; // 体重（kg），可选
+  height?: number; // 身高（cm），可选
   weightTime: Date; // 称重时间
   note?: string; // 备注
   updatedAt: Date; // 更新时间

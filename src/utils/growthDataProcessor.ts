@@ -20,7 +20,6 @@ import type {
   GrowthAssessment,
   GrowthChartDataPoint,
   GrowthMetric,
-  LengthRecord,
   WeightRecord,
 } from '@/types/growth';
 
@@ -97,14 +96,14 @@ export function convertWeightRecordsToGrowthPoints(
   prematureDays?: number,
 ): BabyGrowthPoint[] {
   const allPoints = records
-    .filter((record) => record.weightTime && record.weight > 0)
+    .filter((record) => record.weightTime && record.weight != null && record.weight > 0)
     .map((record) => ({
       age: calculateAge(
         birthDate,
         new Date(record.weightTime),
         prematureDays,
       ),
-      value: record.weight,
+      value: record.weight as number,
       date: new Date(record.weightTime),
       metric: 'weight' as const,
     }));
@@ -120,20 +119,20 @@ export function convertWeightRecordsToGrowthPoints(
  * 图表从第 1 月开始，不保留第 0 月。
  */
 export function convertLengthRecordsToGrowthPoints(
-  records: LengthRecord[],
+  records: WeightRecord[],
   birthDate: Date,
   prematureDays?: number,
 ): BabyGrowthPoint[] {
   const allPoints = records
-    .filter((record) => record.lengthTime && record.length > 0)
+    .filter((record) => record.weightTime && record.height != null && record.height > 0)
     .map((record) => ({
       age: calculateAge(
         birthDate,
-        new Date(record.lengthTime),
+        new Date(record.weightTime),
         prematureDays,
       ),
-      value: record.length,
-      date: new Date(record.lengthTime),
+      value: record.height as number,
+      date: new Date(record.weightTime),
       metric: 'length' as const,
     }));
 

@@ -13,20 +13,13 @@ export async function loader() {
 const defaultParams: IWeightRequest = {
   weightTime: dayjs().format("YYYY-MM-DD HH:mm"),
   weight: "",
+  height: "",
   note: "",
 };
 interface IWeightRequest {
-  /**
-   * 称重时间
-   */
   weight: number | string;
-  /**
-   * 称重记录
-   */
+  height: number | string;
   weightTime: string;
-  /**
-   * 备注
-   */
   note: string;
 }
 
@@ -35,7 +28,7 @@ export const Component = () => {
   const [handler, { isLoading }] = useAddWeightMutation();
   return (
     <>
-      <BlockHeader>体重记录</BlockHeader>
+      <BlockHeader>体重/身高记录</BlockHeader>
       <List strong inset>
         <ListInput
           label="本次的体重?(单位kg)"
@@ -50,6 +43,21 @@ export const Component = () => {
           }}
           pattern="[0-9.]*"
           placeholder="请输入本次的体重单位kg"
+          media={<IconFont icon="icon-yinger" />}
+        />
+        <ListInput
+          label="本次的身高?(单位cm)"
+          type="number"
+          accept={"number"}
+          value={params.height}
+          onChange={(e) => {
+            const value = e.target.value;
+            updateParams((prev) => {
+              return { ...prev, height: value };
+            });
+          }}
+          pattern="[0-9.]*"
+          placeholder="请输入本次的身高单位cm"
           media={<IconFont icon="icon-yinger" />}
         />
 
@@ -87,10 +95,20 @@ export const Component = () => {
       <List strong inset>
         <ListButton
           onClick={() => {
-            const { weight, weightTime } = params;
-            const parseWeight = Number(weight);
-            if (isNaN(parseWeight)) {
+            const { weight, height, weightTime } = params;
+            const parseWeight = weight !== "" ? Number(weight) : undefined;
+            const parseHeight = height !== "" ? Number(height) : undefined;
+
+            if (parseWeight !== undefined && isNaN(parseWeight)) {
               alert("请输入合格的体重数据");
+              return;
+            }
+            if (parseHeight !== undefined && isNaN(parseHeight)) {
+              alert("请输入合格的身高数据");
+              return;
+            }
+            if (parseWeight === undefined && parseHeight === undefined) {
+              alert("体重和身高至少填写一项");
               return;
             }
             if (!weightTime) {
@@ -101,10 +119,14 @@ export const Component = () => {
               return;
             }
 
-            handler({ ...params, weight: parseWeight }).then((res) => {
+            const submitData: Record<string, unknown> = { weightTime, note: params.note };
+            if (parseWeight !== undefined) submitData.weight = parseWeight;
+            if (parseHeight !== undefined) submitData.height = parseHeight;
+
+            handler(submitData).then((res) => {
               if (res?.data?.success) {
                 defaultParams.weightTime = dayjs().format("YYYY-MM-DD HH:mm");
-                updateParams(defaultParams);
+                updateParams({ ...defaultParams });
                 GlobalNotificationService.next({
                   opened: true,
                   title: "添加成功",

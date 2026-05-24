@@ -30,7 +30,8 @@ export const METRIC_UNITS: Record<GrowthMetricType, string> = {
  */
 export interface WeightRecord {
   _id: string;
-  weight: number;
+  weight?: number;
+  height?: number;
   weightTime: string;
   note?: string;
   createdAt: string;

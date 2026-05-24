@@ -54,6 +54,7 @@ export const Component = () => {
           <TableHead>
             <TableRow header>
               <TableCell header>体重</TableCell>
+              <TableCell header>身高</TableCell>
               <TableCell header className="text-center">
                 时间
               </TableCell>
@@ -70,6 +71,7 @@ export const Component = () => {
               return (
                 <TableRow key={item._id}>
                   <TableCell>{item.weight}kg</TableCell>
+                  <TableCell>{item.height ? `${item.height}cm` : '-'}</TableCell>
                   <TableCell className="text-center text-nowrap">
                     {dayjs(item.weightTime).format("MM-DD HH:mm")}
                   </TableCell>
@@ -93,7 +95,7 @@ export const Component = () => {
                             return;
                           }
                           const res = confirm(
-                            `确定要删除${dayjs(item.milkTime).format("MM-DD HH:mm")}这条数据吗？`
+                            `确定要删除${dayjs(item.weightTime).format("MM-DD HH:mm")}这条数据吗？`
                           );
                           if (res) {
                             removeHandler({ _id: item._id });
@@ -114,4 +116,4 @@ export const Component = () => {
   );
 };
 
-Component.displayName = "MilkAmountList";
+Component.displayName = "WeightList";
