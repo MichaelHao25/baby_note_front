@@ -74,3 +74,16 @@ export interface BabyResponse extends ApiResponse<{
   createdAt: string;
   updatedAt: string;
 }> {}
+
+export interface UploadFileResult {
+  url: string;
+  key: string;
+}
+
+export interface TimelineItem {
+  _id: string;
+  noteTime: string;
+  note: string;
+  images: string[];
+  updatedAt: string;
+}

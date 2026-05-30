@@ -16,10 +16,10 @@ const baseUrl = import.meta.env.DEV
   : "http://47.100.13.112/api/v1";
 export const apiSlice = createApi({
   reducerPath: "api",
-  tagTypes: ["Eat", "Weight", "Timeline", "Baby"],
+  tagTypes: ["Eat", "Weight", "Timeline", "Baby", "Upload"],
   baseQuery: fetchBaseQuery({
     baseUrl: baseUrl,
-    prepareHeaders: (headers, { arg }) => {
+    prepareHeaders: (headers) => {
       // 从localStorage获取token
       const token = localStorage.getItem("token");
 
@@ -151,6 +151,22 @@ export const apiSlice = createApi({
         method: "GET",
       }),
     }),
+    uploadFiles: builder.mutation({
+      query: ({ module, formData }: { module: string; formData: FormData }) => ({
+        url: `/upload/${module}`,
+        method: "POST",
+        body: formData,
+        formData: true,
+      }),
+      invalidatesTags: ["Upload"],
+    }),
+    deleteFiles: builder.mutation({
+      query: (keys: string[]) => ({
+        url: "/upload",
+        method: "DELETE",
+        body: { keys },
+      }),
+    }),
     addBaby: builder.mutation<BabyResponse, BabyRequest>({
       query: (params) => ({
         url: "/baby",
@@ -198,4 +214,6 @@ export const {
   useAddBabyMutation,
   useGetBabyQuery,
   useUpdateBabyMutation,
+  useUploadFilesMutation,
+  useDeleteFilesMutation,
 } = apiSlice;

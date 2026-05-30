@@ -4,7 +4,19 @@
       "Bash(git checkout:*)",
       "mcp__context7__resolve-library-id",
       "mcp__context7__query-docs",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(node *)",
+      "Bash(curl -s \"http://localhost:8080/api/v1/weight?current=1&pageSize=10\" -H \"authorization: Bearer $\\(grep token ~/.claude/projects/-Users-blue-Stations-baby-note-front/d5887375-8f7e-469b-b389-e67400edb6cb.jsonl)",
+      "Bash(pnpm tsc *)",
+      "Bash(pnpm build *)",
+      "Bash(pnpm lint *)",
+      "WebSearch",
+      "Read(//Users/blue/Stations/baby_note/backend/test/**)",
+      "Read(//Users/blue/Stations/baby_note/backend/**)",
+      "Bash(pnpm test *)",
+      "Bash(npx jest *)",
+      "Bash(npx tsc *)",
+      "Bash(npx eslint *)"
     ]
   }
 }
